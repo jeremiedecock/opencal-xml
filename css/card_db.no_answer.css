@@ -1,0 +1,48 @@
+* {
+	border-width		: 0px;
+
+	color			: #666666;
+	font-family		: verdana, sans-serif;
+	font-size		: 13px;
+	font-weight		: normal;
+
+	margin			: 0px;
+	padding			: 0px;
+}
+
+card_db {
+	background-color	: #f4f4f4;
+	text-align		: center;
+}
+
+card {
+	background-color	: white;
+	border			: 2px solid #dddddd;
+
+	display			: block;
+
+	margin-top		: 1em;
+	margin-bottom		: 1em;
+	margin-left		: auto; /* cf ... */
+	margin-right		: auto; /* cf ... */
+
+	text-align		: left; /* cf ... */
+	width			: 700px;
+}
+
+question {
+	display			: block;
+	font-weight		: bold;
+
+	margin    		: 1em;
+
+	white-space		: -moz-pre-wrap;
+}
+
+answer {
+	display			: none;
+}
+
+tag {
+	display			: none;
+}
