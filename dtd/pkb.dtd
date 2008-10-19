@@ -8,7 +8,6 @@
 
 <!-- Card -->
 <!ELEMENT card (question,answer?,(review|tag)*)>
-<!ATTLIST card id ID #REQUIRED>
 <!ATTLIST card cdate CDATA #REQUIRED>
 
 <!-- Question -->
