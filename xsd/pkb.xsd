@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE schema SYSTEM "XMLSchema.dtd" >
+
+<!--
+  PKB Schema v1.0
+  Copyright (c) 2008 Jérémie DECOCK
+  All rights reserved.
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+	
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+			Schema for personal knowledge base (OpenCAL) version 1.0
+			Copyright (c) 2008 Jérémie DECOCK
+			All rights reserved.
+		</xs:documentation>
+	</xs:annotation>
+
+	<!-- Types declaration -->
+	<xs:simpleType name="resultType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="good" />
+			<xs:enumeration value="bad" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Elements declaration -->
+	<xs:element name="pkb">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="card" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="card">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="question" minOccurs="1" maxOccurs="1" />
+				<xs:element ref="answer" minOccurs="0" maxOccurs="1" />
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="tag" />
+					<xs:element ref="review" />
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="cdate" type="xs:date" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="question" type="xs:string" />
+
+	<xs:element name="answer" type="xs:string" />
+
+	<xs:element name="tag" type="xs:string" />
+	
+	<xs:element name="review" >
+		<xs:complexType>
+			<xs:attribute name="rdate" type="xs:date" use="required" />
+			<xs:attribute name="result" type="resultType" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
