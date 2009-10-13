@@ -1,6 +1,6 @@
 <!--
-    Personal Knowledge Base version 1.0
-    Copyright (c) 2007,2008 Jérémie DECOCK
+    Personal Knowledge Base version 1.1
+    Copyright (c) 2007,2008,2009 Jérémie DECOCK
 -->
 
 <!-- Knowledge Base -->
@@ -8,7 +8,8 @@
 
 <!-- Card -->
 <!ELEMENT card (question,answer?,(review|tag)*)>
-<!ATTLIST card cdate CDATA #REQUIRED>
+<!ATTLIST card cdate CDATA #REQUIRED
+               hidden (true|false) "false">
 
 <!-- Question -->
 <!ELEMENT question (#PCDATA)>
@@ -18,8 +19,8 @@
 
 <!-- Review -->
 <!ELEMENT review EMPTY>
-<!ATTLIST review rdate CDATA #REQUIRED>
-<!ATTLIST review result (good|bad) #REQUIRED>
+<!ATTLIST review rdate CDATA #REQUIRED
+                 result (good|bad) #REQUIRED>
 
 <!-- Tag -->
 <!ELEMENT tag (#PCDATA)>
