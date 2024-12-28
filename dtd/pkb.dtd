@@ -8,7 +8,8 @@
 
 <!-- Card -->
 <!ELEMENT card (question,answer?,(review|tag)*)>
-<!ATTLIST card cdate CDATA #REQUIRED
+<!ATTLIST card uuid CDATA #REQUIRED
+               cdate CDATA #REQUIRED
                hidden (true|false) "false">
 
 <!-- Question -->
@@ -19,7 +20,8 @@
 
 <!-- Review -->
 <!ELEMENT review EMPTY>
-<!ATTLIST review rdate CDATA #REQUIRED
+<!ATTLIST review uuid CDATA #REQUIRED
+                 rdate CDATA #REQUIRED
                  result (good|bad) #REQUIRED>
 
 <!-- Tag -->
